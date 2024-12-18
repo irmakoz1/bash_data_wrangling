@@ -12,7 +12,7 @@ Data needed formatting, and processsing. The scripts are first formatting and th
 test script is producing a log file and it is for debugging.
 
 Difficulties: The two datasets did not have the same format for any of the columns. 
-I had to debug how they were formattted and standardize them, which took a bit of time. The test script was useful 
+I had to debug how they were formattted and standardize them, which took a bit of time. The date column in accidents is in 37 and time is in 36th column. In meterology date is first and time is the second column. The test script was useful 
 for logging the errors. I realized The date in accidents was in European dd/mm/yy format and in meterology dd-mm-yyyy format.
 I developped a script that checks different formats of dates and then standardizes them.
 For the time one of the data was in 01 format and the other was 1 format. I made a code for standradizing 2 decimals with addition of 0 to the beggining if they were one.
