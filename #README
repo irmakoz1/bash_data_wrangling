@@ -1,0 +1,19 @@
+#README
+1-be sure you are in the right folder, otherwise run source script.sh
+2-first run formating script
+3-then run format-date-met for meterology formatting the dates
+4-then run format-date-ac for accident formatting the dates
+5-then run merging_hope, this merges files, takes a bit of time
+
+test script is producing a log file and it is for debugging.
+
+Difficulties: The two datasets did not have the same format for any of the columns. 
+I had to debug how they were formattted and standardize them, which took a bit of time. The test script was useful 
+for logging the errors. I realized The date in accidents was in European dd/mm/yy format and in meterology dd-mm-yyyy format.
+I developped a script that checks different formats of dates and then standardizes them.
+For the time one of the data was in 01 format and the other was 1 format. I made a code for standradizing 2 decimals with addition of 0 to the beggining if they were one.
+After time-date columns were in same format, I could continue to develop a script to detect matches. To achieve this,
+I had to carefully examine columns that were supposed to match and then print the data we want from meterology data to be merged with accidents data.
+At the end I achieved it by using awk. However, my file inn the beginning had many issues because, accidents files csv formatting was not the same as meterology data since it had nested quotes for variables: "jj" and meterology data was jj. To overcome this, I changed the formating script and then noticed actually when I did a split to have time-date columns separately I did not clean the header so there was the previous header and new headers. That was why the data was misaligned. At the end I changed the formatting script to add only one header, and my problem was solved. However, I realized it is really important to carefull check the format for csv files with coma separated values and /r for end of the rows. At the end, I had so many temporary files that I created in between, I added rm function to the scripts to clean the files that are of no use.
+
+there is a space for new headers in the output: to remove: sed 's/ //1' input.csv 
