@@ -1,4 +1,8 @@
 #README
+This scripts are developped to merge two dataset by date and time. The datasets are accidents in Zurich 2022-2023 and meterology data in Zurich for 2021-2024.
+Data needed formatting, and processsing. The scripts are first formatting and then selecting the neccessary columns from meterology dataset and adding them to accidents dataset by matching date and time.
+
+
 1-be sure you are in the right folder, otherwise run source script.sh
 2-first run formating script
 3-then run format-date-met for meterology formatting the dates
